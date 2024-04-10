@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-producer
+spec:
+  ports:
+  - name: producer-port
+    port: 3000
+    targetPort: 3000
+  selector:
+      name: deploy-producer
+  type: LoadBalancer
