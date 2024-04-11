@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deploy-consumer
-  namespace: sopes1-workshop
+  namespace: kafka
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: consumer
-        image: osmanpl9610/api-consumer:latest
+        image: osmanpl9610/api-consumer:v4
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
@@ -35,5 +35,3 @@ spec:
             secretKeyRef:
               name: secret-env-consumer
               key: KAFKA_TOPIC
-      imagePullSecrets:
-        - name: dockerhubpull

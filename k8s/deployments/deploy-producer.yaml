@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deploy-producer
-  namespace: sopes1-workshop
+  namespace: kafka
 spec:
   selector:
     matchLabels:

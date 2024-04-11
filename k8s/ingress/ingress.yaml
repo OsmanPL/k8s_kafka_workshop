@@ -5,10 +5,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST"
-  namespace: sopes1-workshop
+  namespace: kafka
 spec:
   rules:
-  - host: <Ip_Ingress_Controller>.nip.io #IP ingress controller (nginx)
+  - host: 34.23.123.206.nip.io #IP ingress controller (nginx)
     http:
       paths:
       - path: /

@@ -34,5 +34,10 @@
 - `helm install nginx-ingress ingress-nginx/ingress-nginx -n nginx-ingress`
 - `kubectl get services -n nginx-ingress`
 
+## Configurar Kafka con Strimzi
+
+- `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n <nombre_namespace>`
+- `kubectl apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-single.yaml -n <nombre_namespace>`
+
 ## Presentación
 <a href="https://docs.google.com/presentation/d/1dcNAvRpuzDIWDV9-GJlksuLRpCPvfpJpZOGBK8o0sN4/edit?usp=sharing" title="Presentación K8S Kafka Workshop">Presentación K8S Kafka Workshop</a>

@@ -9,16 +9,18 @@ const kafka = new Kafka({
 const consumer = kafka.consumer({ groupId: 'test-group' });
 
 const run = async () => {
+
+  const topicName = config.kafkaTopic;
+
+  console.log("Listening to topic: ", topicName); 
+
   await consumer.connect();
-  await consumer.subscribe({ topic:[config.kafkaTopic] });
+  await consumer.subscribe({ topics: [topicName], fromBeginning: true});
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       console.log({
-        key: message.key.toString(),
         value: message.value.toString(),
-        headers: message.headers,
-        topic: topic,
-        partition: partition
+        topic: topic
       });
     }
   });
